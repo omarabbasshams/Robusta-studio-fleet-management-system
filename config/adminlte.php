@@ -301,6 +301,11 @@ return [
             'url'  => 'admin/station',
 
         ],
+        [
+            'text' => 'Seats',
+            'url'  => 'admin/seat',
+
+        ],
 
 
 
