@@ -8,22 +8,7 @@
 ##make virtual host 
 ##nano /etc/apache2/sites-available/bus.com.conf
 
-##add 
 
-##<VirtualHost *:80>
-#   ServerAdmin admin@bus.com
-#   ServerName bus.com
-#   ServerAlias www.bus.com
-#   DocumentRoot /var/www/html/bus/public
-#        <Directory /var/www/html>
-#     Options FollowSymLinks
-#       AllowOverride All#
-#       Order allow,deny
-#       Allow from all
-#   </Directory>
-#   ErrorLog ${APACHE_LOG_DIR}/error.log
-#   CustomLog ${APACHE_LOG_DIR}/access.log combined
-##</VirtualHost>
 
 ##sudo a2ensite bus.com.conf
 
