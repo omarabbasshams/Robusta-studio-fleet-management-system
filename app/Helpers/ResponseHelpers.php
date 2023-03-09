@@ -11,7 +11,7 @@ function responseSuccessData($data, $code = 200)
 {
     return response()->json([
         'status' => 'success',
-        'data' => $data,
+        'message' => $data,
     ], $code);
 }
 
@@ -28,7 +28,16 @@ function responseErrorData($data, $code = 200)
 {
     return response()->json([
         'status' => 'error',
-        'data' => $data,
+        'message' => $data,
+    ], $code);
+}
+
+
+function validationErrors($errors, $code = 400)
+{
+    return response()->json([
+        'status' => 'validations_errors',
+        'message' => $errors,
     ], $code);
 }
 

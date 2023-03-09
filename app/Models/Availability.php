@@ -4,7 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+use App\Models\Trip;
+use App\Models\Station;
+use App\Models\Seat;
 class Availability extends Model
 {
     use HasFactory;
@@ -19,6 +21,6 @@ class Availability extends Model
         return $this->hasOne(Station::class,'id','to_station_id');
     }
     public function seat(){
-        return $this->hasOne(seat::class,'id','seat_id');
+        return $this->hasOne(Seat::class,'id','seat_id');
     }
 }
