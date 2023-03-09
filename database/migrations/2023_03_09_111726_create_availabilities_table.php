@@ -15,6 +15,11 @@ return new class extends Migration
     {
         Schema::create('availabilities', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('seat_id');
+            $table->unsignedBigInteger('trip_id');
+            $table->unsignedBigInteger('from_station_id');
+            $table->unsignedBigInteger('to_station_id');
+            $table->boolean('isavilable')->default(1);
             $table->timestamps();
         });
     }

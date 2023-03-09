@@ -19,7 +19,7 @@ class AdminMiddleware
     {
 
         $user = Auth::user();
-        // dd($user->getRoleNames()->toArray());
+
         if (in_array('admin', $user->getRoleNames()->toArray())  ) {
             return $next($request);
         } else

@@ -29,5 +29,6 @@ class UserSeeder extends Seeder
        ]);
 
        $user->givePermissionTo('all');
+       User::factory()->count(100)->create();
     }
 }
