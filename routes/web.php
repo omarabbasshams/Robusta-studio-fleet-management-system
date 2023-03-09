@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\StationController;
 use App\Http\Controllers\Backend\TripController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,6 @@ Route::get('/', function () {
 Auth::routes();
 Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
     Route::resource('trip',TripController::class);
+    Route::resource('station',StationController::class);
 });
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

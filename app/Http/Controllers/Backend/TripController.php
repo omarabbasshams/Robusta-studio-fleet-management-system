@@ -52,7 +52,7 @@ class TripController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Trip  $aboutus
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
     public function show(Trip $trip)
@@ -63,7 +63,7 @@ class TripController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Trip  $aboutus
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
     public function edit(Trip $trip)
@@ -77,14 +77,14 @@ class TripController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\TripRequest  $request
-     * @param  \App\Models\Trip  $aboutus
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
     public function update(TripRequest $request, Trip $trip)
     {
 
-        $aboutus = Trip::find($trip->id);
-        saveOrUpdateModel($request->all(), $aboutus, $request->local);
+        $trip = Trip::find($trip->id);
+        saveOrUpdateModel($request->all(), $trip);
         $request->session()->flash('status', 'Task was successful!');
         return redirect()->to('admin/trip');
     }
@@ -92,7 +92,7 @@ class TripController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Trip  $aboutus
+     * @param  \App\Models\Trip  $trip
      * @return \Illuminate\Http\Response
      */
     public function destroy(Trip $trip)

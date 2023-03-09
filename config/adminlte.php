@@ -292,8 +292,13 @@ return [
     'menu' => [
 
         [
-            'text' => 'Trip',
+            'text' => 'Trips',
             'url'  => 'admin/trip',
+
+        ],
+        [
+            'text' => 'Stations',
+            'url'  => 'admin/station',
 
         ],
 
