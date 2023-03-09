@@ -24,7 +24,8 @@
 ##database name user password
 
 ##php artisan migrate
-##composer install passport
+##php artisan passport:install
+
 ##php artisan db:seed
 
 ##########################
