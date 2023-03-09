@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 
 class TripController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
@@ -16,11 +18,9 @@ class TripController extends Controller
      */
     public function index()
     {
-        $all_trips  = Trip::all();
+        $all_trips = Trip::all();
         return view('backend.trip.index', compact('all_trips'));
     }
-
-
 
     /**
      * Show the form for creating a new resource.
@@ -83,9 +83,8 @@ class TripController extends Controller
     public function update(TripRequest $request, Trip $trip)
     {
 
-
         $aboutus = Trip::find($trip->id);
-         saveOrUpdateModel($request->all(), $aboutus, $request->local);
+        saveOrUpdateModel($request->all(), $aboutus, $request->local);
         $request->session()->flash('status', 'Task was successful!');
         return redirect()->to('admin/trip');
     }
@@ -101,6 +100,5 @@ class TripController extends Controller
         $trip->delete();
         return redirect()->back();
     }
-
 
 }

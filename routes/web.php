@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::prefix('admin')->middleware('auth')->group(function(){
+Route::prefix('admin')->middleware(['auth','admin'])->group(function(){
     Route::resource('trip',TripController::class);
-    // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
